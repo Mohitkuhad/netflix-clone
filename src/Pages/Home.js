@@ -9,6 +9,7 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
+import { Link } from "react-router-dom";
 
 function Home() {
   const faq = [
@@ -61,9 +62,11 @@ function Home() {
                 placeholder="Email address"
                 className="w-96 h-14 rounded-lg px-5 bg-[rgba(0,0,0,0.7)] border border-lightgrey text-white"
               />
-              <button className="w-40 h-14 rounded-lg bg-netflixRed text-white text-xl font-bold">
-                Get Started &gt;
-              </button>
+              <Link to="/signup/registration">
+                <button className="w-40 h-14 rounded-lg bg-netflixRed text-white text-xl font-bold">
+                  Get Started &gt;
+                </button>
+              </Link>
             </div>
           </div>
         </div>

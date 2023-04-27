@@ -4,6 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //Importing Pages
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import Signup1 from "./Pages/GetStarted/Signup1";
+import Signup2 from "./Pages/GetStarted/Signup2";
+import Signup3 from "./Pages/GetStarted/Signup3";
+import Signup4 from "./Pages/GetStarted/Signup4";
+import Payment from "./Pages/GetStarted/Payment";
 
 function App() {
   return (
@@ -11,6 +16,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup/registration" element={<Signup1 />} />
+        <Route path="/signup/regform" element={<Signup2 />} />
+        <Route path="/signup" element={<Signup3 />} />
+        <Route path="/signup/planform" element={<Signup4 />} />
+        <Route path="/signup/payment" element={<Payment />} />
+
       </Routes>
     </Router>
   );
