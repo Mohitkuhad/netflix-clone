@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import HomeCard from "../Components/HomeCard";
@@ -12,6 +12,15 @@ import {
 import { Link } from "react-router-dom";
 
 function Home() {
+  const [email, setEmail] = useState("");
+  const inputRef = useRef(null);
+  const handleClick = () => {
+    if (email == "") {
+      inputRef.current.focus();
+    } else {
+      window.location.href = `/signup/registration?user=${email}`;
+    }
+  };
   const faq = [
     {
       question: "What is Netflix?",
@@ -61,12 +70,17 @@ function Home() {
                 type="text"
                 placeholder="Email address"
                 className="w-96 h-14 rounded-lg px-5 bg-[rgba(0,0,0,0.7)] border border-lightgrey text-white"
+                ref={inputRef}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
               />
-              <Link to="/signup/registration">
-                <button className="w-40 h-14 rounded-lg bg-netflixRed text-white text-xl font-bold">
-                  Get Started &gt;
-                </button>
-              </Link>
+              <button
+                className="w-40 h-14 rounded-lg bg-netflixRed text-white text-xl font-bold"
+                onClick={handleClick}
+              >
+                Get Started &gt;
+              </button>
             </div>
           </div>
         </div>

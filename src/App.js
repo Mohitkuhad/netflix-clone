@@ -21,7 +21,6 @@ function App() {
         <Route path="/signup" element={<Signup3 />} />
         <Route path="/signup/planform" element={<Signup4 />} />
         <Route path="/signup/payment" element={<Payment />} />
-
       </Routes>
     </Router>
   );

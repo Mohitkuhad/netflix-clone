@@ -4,6 +4,8 @@ import GetStartedHeader from "../../Components/GetStartedHeader";
 import SmallFooter from "../../Components/SmallFooter";
 
 function Signup1() {
+  const queryParams = new URLSearchParams(window.location.search);
+  const email = queryParams.get("user");
   return (
     <>
       <div className="w-screen h-screen flex flex-col justify-center items-center">
@@ -26,7 +28,7 @@ function Signup1() {
             Netflix is personalised for you. Create a password to watch on any
             device at any time.
           </p>
-          <Link to="/signup/regform" className="w-4/5">
+          <Link to={`/signup/regform?user=${email}`} className="w-4/5">
             <button className="bg-netflixRed text-white w-full h-20 text-3xl rounded-lg">
               Next
             </button>
