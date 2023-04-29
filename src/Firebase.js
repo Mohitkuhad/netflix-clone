@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { configureStore } from "@reduxjs/toolkit";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -11,9 +11,10 @@ const firebaseConfig = {
   appId: "1:502954303196:web:e38721821b3e51be789e19",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 const auth = getAuth(app);
 
 export default auth;
+
+
+

@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PrivateRoutes from "./PrivateRoute";
 
 //Importing Pages
 import Home from "./Pages/Home";
@@ -21,6 +22,10 @@ function App() {
         <Route path="/signup" element={<Signup3 />} />
         <Route path="/signup/planform" element={<Signup4 />} />
         <Route path="/signup/payment" element={<Payment />} />
+
+        <Route element={<PrivateRoutes />}>
+          <Route path="/browse" element={<h1>Browse</h1>} />
+        </Route>
       </Routes>
     </Router>
   );
