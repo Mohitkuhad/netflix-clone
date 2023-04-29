@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import GetStartedHeader from "../../Components/GetStartedHeader";
 import SmallFooter from "../../Components/SmallFooter";
+import auth from "../../Firebase";
 
 function Signup3() {
+  console.log(auth.currentUser);
   return (
     <>
       <div className="w-screen h-screen flex flex-col justify-center items-center">

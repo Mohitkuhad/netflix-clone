@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import GetStartedHeader from "../../Components/GetStartedHeader";
 import SmallFooter from "../../Components/SmallFooter";
 import { Link } from "react-router-dom";
 import auth from "../../Firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  setPersistence,
+  browserLocalPersistence,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 function Signup2() {
@@ -12,15 +17,18 @@ function Signup2() {
 
   const email = queryParams.get("user");
   const [password, setPassword] = useState("");
+  const auth = getAuth();
 
   const handleClick = () => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(navigate(`/signup`))
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
+    setPersistence(auth, browserLocalPersistence).then(() => {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(navigate(`/signup`))
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+        });
+    });
   };
   return (
     <>
@@ -51,12 +59,12 @@ function Signup2() {
             className="w-full h-16 bg-transparent border rounded pl-2"
             onChange={(e) => setPassword(e.target.value)}
           />
-            <button
-              className="bg-netflixRed text-white w-full h-16 text-3xl rounded-lg"
-              onClick={handleClick}
-            >
-              Next
-            </button>
+          <button
+            className="bg-netflixRed text-white w-full h-16 text-3xl rounded-lg"
+            onClick={handleClick}
+          >
+            Next
+          </button>
         </div>
       </div>
       <SmallFooter />

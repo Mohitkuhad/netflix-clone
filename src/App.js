@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoute";
+import auth from "./Firebase";
 
 //Importing Pages
 import Home from "./Pages/Home";
@@ -12,6 +13,7 @@ import Signup4 from "./Pages/GetStarted/Signup4";
 import Payment from "./Pages/GetStarted/Payment";
 
 function App() {
+  console.log(auth.currentUser)
   return (
     <Router>
       <Routes>
