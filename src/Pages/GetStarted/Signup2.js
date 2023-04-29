@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import GetStartedHeader from "../../Components/GetStartedHeader";
 import SmallFooter from "../../Components/SmallFooter";
-import { Link } from "react-router-dom";
-import auth from "../../Firebase";
 import {
   getAuth,
   setPersistence,

@@ -9,10 +9,8 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
-import auth from "../Firebase";
 
 function Home() {
-  console.log(auth.currentUser)
   const [email, setEmail] = useState("");
   const inputRef = useRef(null);
   const handleClick = () => {

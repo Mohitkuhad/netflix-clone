@@ -1,7 +1,27 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../Firebase";
 
 function Header() {
+  const [user, setUser] = useState(false);
+  const navigate = useNavigate();
+
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      setUser(true);
+    } else {
+      setUser(false);
+    }
+  });
+
+  const handleClick = () => {
+    if (user) {
+      auth.signOut();
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <div className="w-screen p-10 flex justify-between items-center">
       <img
@@ -14,11 +34,12 @@ function Header() {
           <option>English</option>
           <option>हिन्दी</option>
         </select>
-        <Link to="/login">
-          <button className="w-20 h-9 rounded-lg bg-netflixRed text-white">
-            Sign In
-          </button>
-        </Link>
+        <button
+          className="w-20 h-9 rounded-lg bg-netflixRed text-white"
+          onClick={handleClick}
+        >
+          {user ? "Sign Out" : "Sign In"}
+        </button>
       </div>
     </div>
   );

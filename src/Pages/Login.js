@@ -1,8 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "../Components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  setPersistence,
+  browserLocalPersistence,
+} from "firebase/auth";
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    const auth = getAuth();
+    setPersistence(auth, browserLocalPersistence)
+      .then(() => {
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+            navigate("/browse");
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+          });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
+
   return (
     <div className="bg-[url('https://res.cloudinary.com/dlqpxszzo/image/upload/v1679340120/NetflixClone/homeBg_xsesfd.jpg')] ">
       <div className="w-screen h-[90vh] p-10 justify-center items-center flex ">
@@ -14,16 +47,21 @@ function Login() {
         <div className="w-[500px] flex flex-col gap-10 bg-[rgba(0,0,0,0.8)] roundded p-20">
           <h1 className="text-white text-4xl font-bold">Sign In</h1>
           <input
-            type="text"
-            placeholder="Email or phone number"
+            type="email"
+            placeholder="Email"
             className="w-full h-14 rounded-lg px-5 bg-[rgba(0,0,0,0.7)] border border-lightgrey text-white"
+            onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
             placeholder="Password"
             className="w-full h-14 rounded-lg px-5 bg-[rgba(0,0,0,0.7)] border border-lightgrey text-white"
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="w-full h-14 rounded-lg bg-netflixRed text-white text-xl font-bold">
+          <button
+            className="w-full h-14 rounded-lg bg-netflixRed text-white text-xl font-bold"
+            onClick={handleLogin}
+          >
             Sign In
           </button>
           <div className="flex justify-between">
