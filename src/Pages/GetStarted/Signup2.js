@@ -6,6 +6,7 @@ import {
   setPersistence,
   browserLocalPersistence,
   createUserWithEmailAndPassword,
+  updateProfile
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -15,12 +16,21 @@ function Signup2() {
 
   const email = queryParams.get("user");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const auth = getAuth();
 
   const handleClick = () => {
     setPersistence(auth, browserLocalPersistence).then(() => {
       createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          updateProfile(auth.currentUser, {
+            displayName: name
+          });
+        })
         .then(navigate(`/signup`))
+        .then(() => {
+          console.log("User Created", auth.currentUser);
+        })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
@@ -46,10 +56,16 @@ function Signup2() {
             <br /> We hate paperwork, too.
           </p>
           <input
+            type="text"
+            placeholder="Name"
+            className="w-full h-16 bg-transparent border rounded pl-2"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
             type="email"
             placeholder="Email"
             className="w-full h-16 bg-transparent border rounded pl-2"
-            defaultValue={email}
+            vdialue={email}
           />
           <input
             type="password"

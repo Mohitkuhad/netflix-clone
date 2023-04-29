@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoute";
 
@@ -11,7 +11,15 @@ import Signup3 from "./Pages/GetStarted/Signup3";
 import Signup4 from "./Pages/GetStarted/Signup4";
 import Payment from "./Pages/GetStarted/Payment";
 
+//Logged In
+import Browse from "./Pages/LoggedIn/Browse";
+import auth from "./Firebase";
+
 function App() {
+  useEffect(() => {
+    console.log(auth.currentUser);
+  });
+
   return (
     <Router>
       <Routes>
@@ -24,7 +32,7 @@ function App() {
         <Route path="/signup/payment" element={<Payment />} />
 
         <Route element={<PrivateRoutes />}>
-          <Route path="/browse" element={<h1>Browse</h1>} />
+          <Route path="/browse" element={<Browse />} />
         </Route>
       </Routes>
     </Router>

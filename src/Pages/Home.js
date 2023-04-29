@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import HomeCard from "../Components/HomeCard";
@@ -9,17 +9,31 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const [email, setEmail] = useState("");
   const inputRef = useRef(null);
+  const navigate = useNavigate();
+
+
+  //const handleClick = () => {
+  //  if (email == "") {
+  //    inputRef.current.focus();
+  //  } else {
+  //    navigate("/signup");
+  //  }
+  //};
+
   const handleClick = () => {
-    if (email == "") {
+    if (inputRef.current.value == "") {
       inputRef.current.focus();
     } else {
-      window.location.href = `/signup/registration?user=${email}`;
+      navigate(`/signup/registration?user=${inputRef.current.value}`);
     }
   };
+
+
+  
   const faq = [
     {
       question: "What is Netflix?",
@@ -64,23 +78,27 @@ function Home() {
               Ready to watch? Enter your email to create or restart your
               membership.
             </p>
-            <div className="flex gap-5">
+            <form className="flex gap-5"
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleClick();
+              }}
+            >
               <input
-                type="text"
+                type="email"
                 placeholder="Email address"
                 className="w-96 h-14 rounded-lg px-5 bg-[rgba(0,0,0,0.7)] border border-lightgrey text-white"
                 ref={inputRef}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
+                id="email"
+                required
               />
               <button
                 className="w-40 h-14 rounded-lg bg-netflixRed text-white text-xl font-bold"
-                onClick={handleClick}
+                type="submit"
               >
                 Get Started &gt;
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
