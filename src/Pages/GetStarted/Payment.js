@@ -1,6 +1,7 @@
 import React from "react";
 import GetStartedHeader from "../../Components/GetStartedHeader";
 import SmallFooter from "../../Components/SmallFooter";
+import { Link } from "react-router-dom";
 
 function Payment() {
   return (
@@ -22,10 +23,14 @@ function Payment() {
             This is just a Netflix clone project you can just click "Pay Now"
             and proceed.
           </p>
-          <button className="w-2/3 h-10 bg-netflixRed text-white text-xl rounded">Pay Now</button>
+          <Link to="/browse">
+            <button className="w-2/3 h-10 bg-netflixRed text-white text-xl rounded">
+              Pay Now
+            </button>
+          </Link>
         </div>
       </div>
-        <SmallFooter />
+      <SmallFooter />
     </div>
   );
 }
