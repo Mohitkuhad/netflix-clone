@@ -47,7 +47,7 @@ function Signup2() {
     <>
       <div className="w-screen h-screen flex justify-center items-center">
         <GetStartedHeader />
-        <div className="flex flex-col gap-4 w-2/6 p-5">
+        <div className="flex flex-col gap-4 md:w-2/6 p-5">
           <p>
             STEP
             <span className="font-bold"> 1</span> OF
@@ -79,7 +79,7 @@ function Signup2() {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button
-            className="bg-netflixRed text-white w-full h-16 text-3xl rounded-lg"
+            className="bg-netflixRed text-white h-16 text-3xl rounded-lg w-28 md:w-4/5"
             onClick={handleClick}
           >
             Next

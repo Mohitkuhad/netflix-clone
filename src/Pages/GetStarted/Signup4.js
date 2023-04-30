@@ -33,26 +33,26 @@ function Signup4() {
           </div>
         </div>
 
-        <div className="w-10/12 flex flex-col gap-5 p-10">
-          <div className="w-full flex justify-end">
+        <div className="w-10/12 flex flex-col gap-1 md:gap-5 p-5 md:p-10">
+          <div className="w-full flex md:flex-row flex-col justify-end">
             <div className="w-2/4 h-28 flex gap-10">
-              <div className="h-full w-28 flex justify-center items-center bg-netflixRed text-white text-xl font-semibold opacity-60">
+              <div className="h-full md:w-28 flex justify-center items-center bg-netflixRed text-white md:text-xl font-semibold opacity-60">
                 <h1>Mobile</h1>
               </div>
-              <div className="h-full w-28 flex justify-center items-center bg-netflixRed text-white text-xl font-semibold">
+              <div className="h-full md:w-28 flex justify-center items-center bg-netflixRed text-white md:text-xl font-semibold">
                 <h1>Basic</h1>
               </div>
-              <div className="h-full w-28 flex justify-center items-center bg-netflixRed text-white text-xl font-semibold opacity-60">
+              <div className="h-full md:w-28 flex justify-center items-center bg-netflixRed text-white md:text-xl font-semibold opacity-60">
                 <h1>Standard</h1>
               </div>
-              <div className="h-full w-28 flex justify-center items-center bg-netflixRed text-white text-xl font-semibold opacity-60">
+              <div className="h-full md:w-28 flex justify-center items-center bg-netflixRed text-white md:text-xl font-semibold opacity-60">
                 <h1>Premium</h1>
               </div>
             </div>
           </div>
           <div className="w-full flex flex-col gap-5">
             {/*----------Monthly Price----------*/}
-            <div className="w-full h-14 flex border-b">
+            <div className="w-full h-14 flex md:flex-row flex-col border-b">
               <p className="w-2/4 flex items-center">Monthly Price</p>
               <div className="flex gap-10">
                 <p className="w-28 flex justify-center items-center">₹199</p>
@@ -65,7 +65,7 @@ function Signup4() {
             </div>
 
             {/*----------Video Quality----------*/}
-            <div className="w-full h-14 flex border-b">
+            <div className="w-full h-14 flex md:flex-row flex-col border-b">
               <p className="w-2/4 flex items-center">Video Quality</p>
               <div className="flex gap-10">
                 <p className="w-28 flex justify-center items-center">Good</p>
@@ -78,7 +78,7 @@ function Signup4() {
             </div>
 
             {/*----------Resolution----------*/}
-            <div className="w-full h-14 flex border-b">
+            <div className="w-full h-14 flex md:flex-row flex-col border-b">
               <p className="w-2/4 flex items-center">Resolution</p>
               <div className="flex gap-10">
                 <p className="w-28 flex justify-center items-center">480p</p>
@@ -91,12 +91,12 @@ function Signup4() {
             </div>
 
             {/*----------Phone----------*/}
-            <div className="w-full h-14 flex">
-              <p className="w-2/4 flex items-center">
+            <div className="w-full h-14 flex  md:flex-row flex-col">
+              <p className="w-2/4 flex items-center  md:flex-row flex-col">
                 Devices you can use to watch
               </p>
 
-              <div className="flex gap-10">
+              <div className="flex md:gap-10  md:flex-row flex-col">
                 <div className="w-28 flex flex-col justify-center items-center">
                   <svg
                     width="24"

@@ -15,15 +15,12 @@ function Home() {
   const inputRef = useRef(null);
   const navigate = useNavigate();
 
-
-  //const handleClick = () => {
-  //  if (email == "") {
-  //    inputRef.current.focus();
-  //  } else {
-  //    navigate("/signup");
-  //  }
-  //};
-
+  {
+    /*
+    This function handles the form input and then navigates the user to the signup page also it sends user email to that page so that the form's email section is already prefilled, you can add add a '?' after the url and then enter in the following fomat
+    www.website.com/something?key_name=key_value
+    */
+  }
   const handleClick = () => {
     if (inputRef.current.value == "") {
       inputRef.current.focus();
@@ -32,8 +29,11 @@ function Home() {
     }
   };
 
-
-  
+  {
+    /*
+    This is the FAQ section, you can add more questions and answers by adding more objects in the faq array
+    */
+  }
   const faq = [
     {
       question: "What is Netflix?",
@@ -67,18 +67,20 @@ function Home() {
       <div className="w-screen h-[80vh] bg-[url('https://res.cloudinary.com/dlqpxszzo/image/upload/v1679340120/NetflixClone/homeBg_xsesfd.jpg')]">
         <div className="w-full h-[80vh] absolute top-0 left-0 bg-gradient-to-r from-[rgba(11,20,59,0.8)] to-[rgba(0,0,0,0.4)]">
           <Header />
-          <div className="w-2/4 ml-28 flex flex-col gap-10">
-            <h1 className="text-white text-7xl font-bold">
+          <div className="w-11/12 md:w-2/4 md:ml-28 mt-10 md:mt-0 flex flex-col gap-5 md:gap-10">
+            <h1 className="text-white text-3xl md:text-7xl font-bold">
               Unlimited movies, TV shows and more.
             </h1>
-            <h2 className="text-white text-3xl font-bold">
+            <h2 className="text-white text-2xl md:text-3xl font-bold">
               Watch anywhere. Cancel anytime.
             </h2>
             <p className="text-white text-lg font-bold">
               Ready to watch? Enter your email to create or restart your
               membership.
             </p>
-            <form className="flex gap-5"
+
+            <form
+              className="flex flex-col md:flex-row gap-5"
               onSubmit={(e) => {
                 e.preventDefault();
                 handleClick();
@@ -102,7 +104,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="flex w-screen py-10 bg-gradient-to-b from-[rgba(11,20,59,0.8)] to-[rgba(0,0,0,1)] justify-center flex-wrap gap-5">
+      <div className="flex flex-col md:flex-row w-screen py-10 bg-gradient-to-b from-[rgba(11,20,59,0.8)] to-[rgba(0,0,0,1)] justify-center flex-wrap gap-5">
         <HomeCard
           imgLink="https://res.cloudinary.com/dlqpxszzo/image/upload/v1682507175/NetflixClone/tv_niz2xf.png"
           h1="Enjoy on your TV."
@@ -128,15 +130,19 @@ function Home() {
         />
       </div>
       <div className="w-screen py-14 flex flex-col justify-center items-center">
-        <div className="w-3/4">
-          <h1 className="text-white text-5xl font-bold mb-5">
+        <div className="w-11/12 md:w-3/4">
+          <h1 className="text-white text-2xl md:text-5xl font-bold mb-5">
             Frequently Asked Questions
           </h1>
+
+          {/*
+            Mapping the faq component in the Accordion
+          */}
           <Accordion allowZeroExpanded>
             {faq.map((item, index) => (
               <AccordionItem key={index} className="mb-3">
                 <AccordionItemHeading className="text-white bg-netflixBlue py-6 text-3xl pl-5 hover:bg-netflixBlue2">
-                  <AccordionItemButton className="text-white text-2xl font-bold">
+                  <AccordionItemButton className="text-white text-xl md:text-2xl font-bold">
                     {item.question}
                   </AccordionItemButton>
                 </AccordionItemHeading>
@@ -148,7 +154,7 @@ function Home() {
               </AccordionItem>
             ))}
           </Accordion>
-          <div className="mt-5">
+          <div className="my-10 md:mt-5">
             <p className="text-xl text-white font-semibold">
               Ready to watch? Enter your email to create or restart your
               membership.
@@ -172,18 +178,3 @@ function Home() {
 }
 
 export default Home;
-
-// <Accordion
-//allowZeroExpanded={true}
-//>
-//  <AccordionItem>
-//    <AccordionItemHeading>
-//      <AccordionItemButton className="text-white bg-netflixBlue py-5 text-3xl pl-5">
-//        What is Netflix?
-//      </AccordionItemButton>
-//    </AccordionItemHeading>
-//    <AccordionItemPanel className="text-white">
-//      <p>ans</p>
-//    </AccordionItemPanel>
-//  </AccordionItem>
-//</Accordion>

@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="w-screen h-[50vh] flex flex-col justify-center items-center gap-10 text-lightgrey">
+    <div className="w-screen md:h-[50vh] flex flex-col justify-center items-center gap-10 text-lightgrey">
       <div className="w-3/4">
         <p>
           Questions? Call{" "}
@@ -11,7 +11,7 @@ function Footer() {
           </a>
         </p>
       </div>
-      <div className="w-3/4 flex justify-between mt-5">
+      <div className="w-3/4 flex justify-between md:flex-row flex-col mt-5">
         <div className="w-1/4 flex flex-col gap-3">
           <p className="underline">FAQ</p>
           <p className="underline">Investor Relations</p>

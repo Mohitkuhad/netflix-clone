@@ -36,15 +36,15 @@ function Login() {
 
   return (
     <div className="bg-[url('https://res.cloudinary.com/dlqpxszzo/image/upload/v1679340120/NetflixClone/homeBg_xsesfd.jpg')] ">
-      <div className="w-screen h-[90vh] p-10 justify-center items-center flex ">
+      <div className="w-screen h-[90vh] md:p-10 justify-center items-center flex ">
         <Link to="/">
           <img
             src="https://res.cloudinary.com/dlqpxszzo/image/upload/v1679339417/NetflixClone/logo_evhgwd.png"
             alt="Netflix Clone Header Logo"
-            className="w-32 absolute top-10 left-10"
+            className="w-20 md:w-32 absolute top-10 left-10"
           />
         </Link>
-        <div className="w-[500px] flex flex-col gap-10 bg-[rgba(0,0,0,0.8)] roundded p-20">
+        <div className="w-screen md:w-[500px] flex flex-col gap-10 bg-[rgba(0,0,0,0.8)] rounded p-20">
           <h1 className="text-white text-4xl font-bold">Sign In</h1>
           <input
             type="email"

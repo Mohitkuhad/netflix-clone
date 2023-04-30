@@ -10,7 +10,7 @@ function Signup3() {
     <>
       <div className="w-screen h-screen flex flex-col justify-center items-center">
         <GetStartedHeader />
-        <div className="w-2/4 max-w-[500px] flex flex-col gap-5 items-center p-10">
+        <div className="md:w-2/4 max-w-[500px] flex flex-col gap-5 items-center p-10">
           <img
             src="https://res.cloudinary.com/dlqpxszzo/image/upload/v1679733907/NetflixClone/Get%20Started/Checkmark_wnyfdw.png"
             alt="Netflix Clone Get Started Devices"

@@ -20,18 +20,18 @@ function Banner() {
 
   return (
     <div>
-      <header className="w-screen h-screen">
+      <header className="w-screen md:h-screen">
         <img
           src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
           alt={movie?.name}
-          className="w-screen h-screen object-cover"
+          className="w-screen h-screen object-cover object-center"
         />
         <div className="absolute top-0 left-0">
-          <div className="w-screen h-screen flex flex-col justify-center pl-10">
+          <div className="w-screen h-screen flex flex-col md:justify-center mt-28 pl-10">
             <h1 className="text-white text-4xl font-bold">
               {movie?.title || movie?.name || movie?.original_name}
             </h1>
-            <p className="text-white text-lg w-2/5">
+            <p className="text-white text-lg md:w-2/5">
               {movie?.overview?.length > 150
                 ? movie?.overview?.substring(0, 150) + "..."
                 : movie?.overview}

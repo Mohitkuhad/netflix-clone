@@ -8,7 +8,7 @@ function Payment() {
     <div>
       <GetStartedHeader />
       <div className="w-screen h-screen flex flex-col justify-center items-center">
-        <div className="flex flex-col justify-center items-center w-2/5 gap-5">
+        <div className="flex flex-col justify-center items-center md:w-2/5 gap-5">
           <img
             src="https://res.cloudinary.com/dlqpxszzo/image/upload/v1682607076/NetflixClone/lock_lx7rev.png"
             width="45"
@@ -24,7 +24,7 @@ function Payment() {
             and proceed.
           </p>
           <Link to="/browse">
-            <button className="w-2/3 h-10 bg-netflixRed text-white text-xl rounded">
+            <button className="px-5 md:w-2/3 h-10 bg-netflixRed text-white text-xl rounded">
               Pay Now
             </button>
           </Link>
