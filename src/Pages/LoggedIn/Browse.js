@@ -23,7 +23,7 @@ function Browse() {
         console.log(error);
       });
   };
-
+ 
   useEffect(() => {
     getGeoInfo();
   }, []);
