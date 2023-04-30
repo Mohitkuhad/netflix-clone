@@ -35,11 +35,6 @@ function Signup2() {
           const errorCode = error.code;
           const errorMessage = error.message;
           console.log(errorCode);
-          if (errorCode === "auth/email-already-in-use") {
-            navigate("/login");
-          } else {
-            alert(errorMessage);
-          }
         });
     });
   };
@@ -70,7 +65,7 @@ function Signup2() {
             type="email"
             placeholder="Email"
             className="w-full h-16 bg-transparent border rounded pl-2"
-            vdialue={email}
+            value={email}
           />
           <input
             type="password"
