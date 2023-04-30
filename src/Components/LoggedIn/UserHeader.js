@@ -24,8 +24,6 @@ function UserHeader() {
         <p className="text-white text-lg cursor-pointer">TV Shows</p>
         <p className="text-white text-lg cursor-pointer">Movies</p>
         <p className="text-white text-lg cursor-pointer">New & Popular</p>
-        <p className="text-white text-lg cursor-pointer">My List</p>
-        <p className="text-white text-lg cursor-pointer">Browse by Language</p>
       </div>
       <div className="flex gap-5 items-center">
         <p className="text-white font-bold">{auth.currentUser.displayName}</p>

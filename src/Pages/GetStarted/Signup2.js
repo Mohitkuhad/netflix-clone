@@ -6,7 +6,7 @@ import {
   setPersistence,
   browserLocalPersistence,
   createUserWithEmailAndPassword,
-  updateProfile
+  updateProfile,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +24,7 @@ function Signup2() {
       createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
           updateProfile(auth.currentUser, {
-            displayName: name
+            displayName: name,
           });
         })
         .then(navigate(`/signup`))
@@ -34,7 +34,12 @@ function Signup2() {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(errorCode, errorMessage);
+          console.log(errorCode);
+          if (errorCode === "auth/email-already-in-use") {
+            navigate("/login");
+          } else {
+            alert(errorMessage);
+          }
         });
     });
   };
