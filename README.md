@@ -1,6 +1,12 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Netflix Clone app, created with React Js
+
+## Technologies used : 
+1. React Js
+2. Tailwind CSS ( For styling )
+3. Firebase Authentication ( For Authentication )
+4. React Router Dom ( For Routing )
 
 ## Available Scripts
 
