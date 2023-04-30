@@ -6,6 +6,7 @@ function Header() {
   const [user, setUser] = useState(false);
   const navigate = useNavigate();
 
+  
   //This component updated the const user declared in useState every time the user is logged in.
   auth.onAuthStateChanged((user) => {
     if (user) {

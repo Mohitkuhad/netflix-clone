@@ -1,5 +1,6 @@
 import React from "react";
 
+// Footer for the home page.
 function Footer() {
   return (
     <div className="w-screen md:h-[50vh] flex flex-col justify-center items-center gap-10 text-lightgrey">

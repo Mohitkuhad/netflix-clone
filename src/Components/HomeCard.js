@@ -1,5 +1,6 @@
 import React from "react";
 
+//This is the component used in on the home page under hero section
 function HomeCard({ imgLink, h1, h2 }) {
   return (
     <div className="md:w-[40vw] md:h-[35vw] flex flex-col justify-center items-center bg-gradient-to-br from-[#0b143b] to-[#400d1f] rounded-xl">

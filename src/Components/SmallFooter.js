@@ -1,5 +1,6 @@
 import React from "react";
 
+// Footer for the get started page.
 function SmallFooter() {
   return (
     <div className="w-screen flex flex-col justify-center items-center gap-5 pb-5 text-gray-500">

@@ -4,6 +4,8 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { IconContext } from "react-icons";
 import { Link } from "react-router-dom";
 
+
+// Header for the browse page after the user is logged in.
 function UserHeader() {
   const handleHover = () => {
     document.getElementById("dropdown").classList.remove("hidden");

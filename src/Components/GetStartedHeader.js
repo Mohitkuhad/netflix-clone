@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+// Header for the get started page.
 function GetStartedHeader() {
   return (
     <div className="w-screen flex justify-between p-5 md:p-10 absolute top-0">

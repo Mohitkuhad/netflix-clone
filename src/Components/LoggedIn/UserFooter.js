@@ -5,6 +5,8 @@ import { FaInstagram } from "react-icons/fa";
 import { BsTwitter } from "react-icons/bs";
 import { AiFillYoutube } from "react-icons/ai";
 
+
+// Footer for the browse page.
 function UserFooter() {
   return (
     <div className="w-screen bg-black px-44 py-32">
