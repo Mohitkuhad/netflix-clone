@@ -18,9 +18,7 @@ function Login() {
     setPersistence(auth, browserLocalPersistence)
       .then(() => {
         signInWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-            const user = userCredential.user;
-            console.log(user);
+          .then(() => {
             navigate("/browse");
           })
           .catch((error) => {
