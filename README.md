@@ -7,6 +7,7 @@ This is a Netflix Clone app, created with React Js
 2. Tailwind CSS ( For styling )
 3. Firebase Authentication ( For Authentication )
 4. React Router Dom ( For Routing )
+5. Axios ( For Country Name )
 
 ## Available Scripts
 
