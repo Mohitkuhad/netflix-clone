@@ -1,4 +1,4 @@
-# Netflix Clone
+# Netflix Clone (<a href="https://mohit-netflix.vercel.app">View Live</a>)
 
 This project is a Netflix clone app created using ReactJS, Tailwind CSS for styling, Firebase for authentication, Axios for getting data from The Movie DB API, and React Router Dom for routing. This project provides a practical example of all the above-mentioned technologies.
 
