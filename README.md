@@ -1,77 +1,75 @@
-# Getting Started with Create React App
+# Netflix Clone
 
-This is a Netflix Clone app, created with React Js
+This project is a Netflix clone app created using ReactJS, Tailwind CSS for styling, Firebase for authentication, Axios for getting data from The Movie DB API, and React Router Dom for routing. This project provides a practical example of all the above-mentioned technologies.
 
-## Technologies used : 
-1. React Js
-2. Tailwind CSS ( For styling )
-3. Firebase Authentication ( For Authentication )
-4. React Router Dom ( For Routing )
-5. Axios ( For Country Name )
+## Features
+<ul>
+<li>
+User authentication using Firebase
+</li>
+<li>
+Home page with a list of popular movies
+</li>
+<li>
+Responsive design for mobile and desktop
+</li>
+</ul>
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Clone the repository to your local machine.<br/>
+<code>git clone https://github.com/Mohitkuhad/netflix-clone.git</code>
 
-### `npm start`
+Change into the project directory.<br/>
+<code>cd netflix-clone</code>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Install the dependencies.<br/>
+<code>npm install</code>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Create a .env file in the root directory and add your Firebase and The Movie DB API keys.<br/>
+<code>REACT_APP_TMDB_API=the_movie_db_API
+REACT_APP_FIREBASE_API_KEY=firbase_api_key
+REACT_APP_FIREBASE_DOMAIN=firebase_domain
+REACT_APP_FIREBASE_PROJECT_ID=firebase_project_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=firebase_storage_bucket
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=firebase_sender_id
+REACT_APP_FIREBASE_APP_ID=firebase_app_id
+</code>
 
-### `npm test`
+Start the development server.<br/>
+<code>npm start</code>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies
+<ul>
+  <li>ReactJS</li>
+  <li>Tailwind CSS</li>
+  <li>Firebase</li>
+  <li>Axios</li>
+  <li>React Router Dom</li>
+</ul>
 
-### `npm run build`
+## API Used
+<ul>
+  <li>The Movie DB</li>
+</ul>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Acknowledgements
+<ul>
+  <li>The Movie DB API (<a href="https://www.themoviedb.org/">https://www.themoviedb.org/</a>)
+  <li>Firebase (<a href="https://firebase.google.com/">https://firebase.google.com/</a>)
+  <li>Axios (<a href="https://axios-http.com/">https://axios-http.com/</a>)
+  <li>React Router Dom (<a href="https://reactrouter.com/">https://reactrouter.com/</a>)
+  <li>Tailwind CSS (<a href="https://tailwindcss.com/">https://tailwindcss.com/</a>)
+</ul>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
