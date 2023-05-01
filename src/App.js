@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoute";
 
@@ -13,13 +13,8 @@ import Payment from "./Pages/GetStarted/Payment";
 
 //Logged In
 import Browse from "./Pages/LoggedIn/Browse";
-import auth from "./Firebase";
 
 function App() {
-  useEffect(() => {
-    console.log(auth.currentUser);
-  });
-
   return (
     <Router>
       <Routes>
